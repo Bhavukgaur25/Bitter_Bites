@@ -1,0 +1,81 @@
+<div class="menu">
+    <ul class="flex items-center space-x-4  bg-white">
+      <li>
+        <button
+          mat-icon-button
+          class="example-icon"
+          aria-label="Example icon-button with menu icon"
+        >
+          <mat-icon
+            (click)="this.sideNav.open()"
+            *ngIf="!sideNav?.opened"
+            class="text-black"
+            >menu</mat-icon
+          >
+          <mat-icon
+            (click)="this.sideNav.close()"
+            *ngIf="sideNav?.opened"
+            class="text-black"
+            >close</mat-icon
+          >
+        </button>
+      </li>
+      <li>
+        <a href="javascript:void(0)" class="text-black text-xl font-bold"
+          >Bitter_Bites</a
+        >
+      </li>
+      <li class="header-tool">
+        <button mat-icon-button aria-label="Logout" class="text-black" routerLink="/login2">
+          <mat-icon>logout</mat-icon>
+        </button>
+      </li>
+    </ul>
+  </div>
+  
+  
+  
+  <mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="custom-sidenav ">
+      <div class="sidenav-header">
+        <span>B;) News</span>
+      </div>
+      <div class="logo-container">
+        <img src="https://cdn4.vectorstock.com/i/thumb-large/50/08/news-alerts-breaking-logo-tv-design-element-vector-24575008.jpg"  alt="News Alerts Logo" class="logo w-full right-0">
+      </div>
+      <mat-divider></mat-divider>
+      <mat-nav-list>
+        <a mat-list-item *ngFor="let source of sources" (click)="searchSource(source)">
+          <mat-icon mat-list-icon>event_note</mat-icon>
+          <span mat-line>{{source.name}}</span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    
+    <mat-sidenav-content class="content">
+        <div class="container mx-auto px-4 py-8">
+          <h2 class="text-2xl font-bold mb-6 text-purple-700 border-b-2 border-purple-700 pb-2">Top 10 Trending News!</h2>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <ng-container *ngFor="let article of articles">
+              <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                <img [src]="article.urlToImage" alt="Article image" class="w-full h-48 object-cover">
+                <div class="p-4">
+                  <div class="flex justify-between items-center text-sm text-gray-600 mb-2">
+                    <span>{{article.author}}</span>
+                    <span>{{article.publishedAt | date:'medium'}}</span>
+                  </div>
+                  <h3 class="font-bold text-lg mb-2 line-clamp-2">{{article.title}}</h3>
+                  <p class="text-gray-700 mb-4 line-clamp-3" [innerHTML]="article.description"></p>
+                  <a href="{{article.url}}" target="_blank" class="text-purple-700 hover:underline">Read more...</a>
+                </div>
+              </div>
+            </ng-container>
+          </div>
+        </div>
+      </mat-sidenav-content>
+      
+      
+      
+
+  </mat-sidenav-container>

@@ -1,0 +1,108 @@
+.custom-sidenav {
+    width: 290px;
+    background-color: #FFFFFF;
+    color: white;
+  }
+  
+  .sidenav-header {
+    background-color: #e2c1f3;
+    color: rgb(72, 64, 64);
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  
+    span {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  }
+  .logo-container {
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 140px; // Increased height to accommodate larger logo
+  
+    .logo {
+      width: 100px; // Increased from 80px
+      height: 130px; // Increased from 80px
+      margin-bottom: 12px;
+      display: block;
+      transition: transform 0.3s ease; // Add smooth transition for zoom effect
+  
+      &:hover {
+        transform: scale(1.1); // Subtle zoom effect on hover
+      }
+    }
+  
+    
+  }
+
+  
+    
+  
+  mat-nav-list {
+    padding-top: 0;
+  
+    a {
+      color: white;
+    }
+  
+    .mat-list-item {
+      color: white;
+    }
+  
+    .mat-list-icon {
+      color: white;
+    }
+  }
+  
+  // Optionally, you can style the main content area
+  mat-sidenav-content {
+    padding: 20px;
+  }
+
+
+
+
+
+
+  .menu {
+    background-color: #FFFFFF;
+    color: #fff;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  .header-tool {
+    padding-left: 1200px;
+  }
+  
+  .menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .menu li {
+    margin-right: 20px;
+  }
+  
+  .menu li:last-child {
+    margin-right: 0;
+  }
+  
+  .menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .menu a:hover {
+    background-color: #555;
+  }
